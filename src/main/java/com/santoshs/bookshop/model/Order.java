@@ -1,5 +1,10 @@
 package com.santoshs.bookshop.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import java.time.LocalDate;
 import java.util.List;
 import lombok.AllArgsConstructor;
@@ -18,8 +23,11 @@ import lombok.ToString;
 @NoArgsConstructor
 @ToString
 @Builder
+@Entity
 public class Order {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Builder.Default
@@ -29,6 +37,7 @@ public class Order {
     private OrderStatus status = OrderStatus.NEW;
 
     @Singular
+    @OneToMany
     private List<OrderLine> orderLines;
 
 
