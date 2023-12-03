@@ -38,6 +38,12 @@ jobs:
       - name: Run tests
         run: ./gradlew test
 
+      - name: Run checkstyle on main
+        run: ./gradlew checkstyleMain
+
+      - name: Run checkstyle on test
+        run: ./gradlew checkstyleTest
+
       - name: Upload build artifact
         uses: actions/upload-artifact@v3
         with:

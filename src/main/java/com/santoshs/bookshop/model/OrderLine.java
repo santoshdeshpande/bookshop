@@ -1,7 +1,15 @@
 package com.santoshs.bookshop.model;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
+
+/**
+ * OrderLine entity representing a line for an Order.
+ */
 @Data
 @ToString
 @NoArgsConstructor

@@ -1,12 +1,18 @@
 package com.santoshs.bookshop.model;
 
-import lombok.*;
-import org.springframework.cglib.core.Local;
-
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.Singular;
+import lombok.ToString;
 
+
+/**
+ * Order entity representing an order from a customer.
+ */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -26,7 +32,7 @@ public class Order {
     private List<OrderLine> orderLines;
 
 
-    public double getTotal() {
+    public final double getTotal() {
         return orderLines.stream().mapToDouble(OrderLine::getSubTotal).sum();
     }
 

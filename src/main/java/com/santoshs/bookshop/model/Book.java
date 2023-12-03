@@ -1,9 +1,16 @@
 package com.santoshs.bookshop.model;
 
-import lombok.*;
-
 import java.time.LocalDate;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
+
+/**
+ * Book represents an entity of type Book.
+ */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -24,11 +31,11 @@ public class Book {
     private int quantity;
 
 
-    public boolean inStock() {
+    public final boolean inStock() {
         return quantity > 0;
     }
 
-    public void addToStock(int quantity) {
-        this.quantity = this.quantity + quantity;
+    public final void addToStock(int qty) {
+        this.quantity = this.quantity + qty;
     }
 }

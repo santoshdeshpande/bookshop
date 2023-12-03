@@ -1,13 +1,15 @@
 package com.santoshs.bookshop.model;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
-
-import java.time.LocalDate;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
+import org.junit.jupiter.api.Test;
+
+
+/**
+ * Tests for Orders.
+ */
 public class OrderTest {
 
     @Test
